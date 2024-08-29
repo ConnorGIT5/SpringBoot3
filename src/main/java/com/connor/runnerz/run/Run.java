@@ -2,6 +2,8 @@ package com.connor.runnerz.run;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Positive;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Version;
 
 import java.time.LocalDateTime;
 
@@ -10,14 +12,21 @@ import java.time.LocalDateTime;
 // comes with equals and hashcode
 
 public record Run(
+        // @Id to mark it's the identifier
+        //@Id
         Integer id,
         @NotEmpty
         String title,
         LocalDateTime startedOn,
         LocalDateTime completedOn,
+        // '@Positive' means the value must be positive
         @Positive
         Integer miles,
         Location location
+        // '@Version' is Used to track if there's a new row or an existing row
+        //@Version
+        //Integer version
+
         ) {
 
         // constructor for the record
