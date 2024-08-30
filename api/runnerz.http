@@ -1,0 +1,36 @@
+### find all of the runs
+GET http://localhost:8080/api/runs
+
+### find a run by ID
+GET http://localhost:8080/api/runs/2
+
+### find by ID that does not exist
+GET http://localhost:8080/api/runs/hello
+
+
+### create a run
+POST http://localhost:8080/api/runs
+Content-Type: application/json
+
+{
+  "id": 14,
+  "title": "Sunday afternoon Marathon",
+  "startedOn": "2024-01-01T15:00:00",
+  "completedOn": "2024-01-01T16:00:00",
+  "miles": 26,
+  "location": "INDOOR"
+}
+
+### update an existing Run
+PUT http://localhost:8080/api/runs/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "UPDATED TITLE",
+  "startedOn": "2024-01-01T15:00:00",
+  "completedOn": "2024-01-01T16:00:00",
+  "miles": 1,
+  "location": "OUTDOOR"
+
+}

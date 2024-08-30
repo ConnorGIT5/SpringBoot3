@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/runs")
 public class RunController {
 
-    private final JdbcClientRunRepository runRepository;
+    private final RunRepository runRepository;
 
-    public RunController(JdbcClientRunRepository runRepository) {
+    public RunController(RunRepository runRepository) {
         this.runRepository = runRepository;
     }
 
